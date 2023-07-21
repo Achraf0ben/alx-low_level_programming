@@ -1,4 +1,4 @@
-include "main.h"
+#include "main.h"
 
 /**
  * print_triangle - prints a triangle, followed by a new line
@@ -6,23 +6,25 @@ include "main.h"
  */
 void print_triangle(int size)
 {
-	int x, y, z;
 	if (size <= 0)
 	{
 		_putchar('\n');
-	}
-	else
+	} else
 	{
-		for (x = 0; x < size; x++)
+		int i, j;
+
+		for (i = 1; i <= size; i++)
 		{
-			for (y = size - x; y > 1; y--)
+			for (j = i; j < size; j++)
 			{
-				_putchar(32);
+				_putchar(' ');
 			}
-			for (z = 0; z <= x; z++)
+
+			for (j = 1; j <= i; j++)
 			{
-				_putchar(35);
+				_putchar('#');
 			}
+
 			_putchar('\n');
 		}
 	}
